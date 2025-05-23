@@ -1,0 +1,24 @@
+{
+  "task_worldmodels": {
+    "123": "\nWorld Model Summary:\nObjects:\n- ID 1: character, States: None\n- ID 11: bathroom, States: None\n- ID 24: toilet, States: CLEAN, CLOSED\n- ID 25: stall, States: None\n- ID 26: bathroomcabinet, States: CLEAN, CLOSED\n- ID 27: bathroomcounter, States: CLEAN, CLOSED\n- ID 28: sink, States: CLEAN\n- ID 149: fridge, States: CLOSED\n- ID 150: stove, States: CLOSED\n- ID 332: chicken, States: None\n- ID 333: chicken, States: None\n\nRelationships:\n- 1 INSIDE 11\n- 1 CLOSE 26\n- 1 CLOSE 27\n"
+  },
+  "action_analyses": {
+    "123": [
+      {
+        "is_executable": false,
+        "environment_change": "Failed to get response from LLM after multiple retries.",
+        "issues": {
+          "existence": [],
+          "state": [],
+          "sequence": [],
+          "relationship": []
+        },
+        "raw_response": "The answer is no.\nEnvironment change: Failed to get response from LLM after multiple retries.",
+        "task_id": "123",
+        "action_plan": "\nwalk('kitchen(id:50)')\ngrab('chicken(id:332)')\nwalk('fridge(id:149)')\nopen('fridge(id:149)')\nputin('chicken(id:332)', 'fridge(id:149)')\nclose('fridge(id:149)')\n",
+        "timestamp": "2025-05-12 10:38:09"
+      }
+    ]
+  },
+  "last_updated": "2025-05-12 10:38:09"
+}
